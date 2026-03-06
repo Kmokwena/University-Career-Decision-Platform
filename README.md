@@ -1,1 +1,1 @@
-# university-career-decision-platform
+# University-Career-Decision-Platform
