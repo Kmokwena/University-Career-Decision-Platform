@@ -1,0 +1,14 @@
+{% extends "layout.html" %} 
+
+{% block title %} 
+    University List 
+{% endblock %}
+
+{% block content %}
+    <h1>List of all Universities in South Africa.</h1>
+    <section>
+        {% for u in uni %}
+           <p> <button> {{u.university_name}}</button></p>
+        {% endfor %}
+    </section>
+{% endblock %}
