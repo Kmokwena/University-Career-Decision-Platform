@@ -24,5 +24,6 @@ urlpatterns = [
     path('', views.homepage),
     path('about/', views.about),
     path('university/', include('universities.urls')),
-    path('qualification/', include('qualification.urls'))
+    path('qualification/', include('qualification.urls')),
+    path('career/', include('career.urls'))
 ]
