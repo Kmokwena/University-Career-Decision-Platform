@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bursary
+{% endblock %}
+
+{% block content %}
+    <h1>Bursary List.</h1>
+    {% for item in bursary %}
+        <span>{{ item.bursary_name }}</span>
+    {% endfor %}
+{% endblock  %}
