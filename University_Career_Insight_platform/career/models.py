@@ -14,4 +14,4 @@ class Career(models.Model):
     industry = models.CharField(max_length=50, blank=True, null=True) # Feature will be implememnted in future
 
     def __str__(self):
-        return f'{self.career_name}'
+        return self.career_name
