@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     "universities",
     "qualification",
     "career",
+    "bursary",
+    "rest_framework"
 ]
 
 MIDDLEWARE = [

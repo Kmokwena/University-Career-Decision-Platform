@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from .models import University
-
+from rest_framework import viewsets
+from .serializers import UniversitySerializer
 # Create your views here.
-def university_list(request):
-    uni = University.objects.all()
-    return render(request, 'universities/university.html', {'uni': uni})
+class UnviersityViewSet(viewsets.ModelViewSet):
+    queryset = University.objects.all()
+    serializer_class = UniversitySerializer

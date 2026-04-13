@@ -18,12 +18,24 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+from rest_framework.routers import DefaultRouter
+from bursary.views import BursaryViewSet
+from universities.views import UnviersityViewSet
+from qualification.views import QualificationViewSet
+from career.views import CareerViewSet
+
+router = DefaultRouter()
+router.register(r'bursaries', BursaryViewSet)
+router.register(r'universities', UnviersityViewSet)
+router.register(r'qualification', QualificationViewSet)
+router.register(r'career', CareerViewSet)
+
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', views.homepage),
     path('about/', views.about),
-    path('university/', include('universities.urls')),
-    path('qualification/', include('qualification.urls')),
-    path('career/', include('career.urls'))
+    path('api/', include(router.urls)),
+    
 ]

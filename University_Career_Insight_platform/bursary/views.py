@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from rest_framework import viewsets
 from .models import Bursary
+from .serializers import BursarySerializer
 
 # Create your views here.
 
-def bursary_list(request):
-    bursary = Bursary.objects.all()
-    return render(request, 'bursary.html', {'bursary': bursary})
+class BursaryViewSet(viewsets.ModelViewSet):
+    queryset = Bursary.objects.all()
+    serializer_class = BursarySerializer
