@@ -41,8 +41,13 @@ INSTALLED_APPS = [
     "qualification",
     "career",
     "bursary",
-    "rest_framework"
+    "rest_framework",
+    "django_filters",
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -124,3 +129,9 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ]
+}

@@ -9,7 +9,8 @@ class ThroughputStatsSerializer(serializers.ModelSerializer):
 
 class QualificationSerializer(serializers.ModelSerializer):
     stats = ThroughputStatsSerializer(read_only=True, required=False)
+    careers = serializers.StringRelatedField(many=True, read_only=True)
 
     class Meta:
         model = Qualification
-        fields = ['id', 'qualification_name', 'qualification_code', 'university', 'duration', 'field_of_study', 'stats']
+        fields = ['id', 'qualification_name', 'qualification_code', 'university', 'duration', 'field_of_study', 'stats', 'careers']

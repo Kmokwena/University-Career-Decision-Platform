@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from .models import Career
 from .serializers import CareerSerializer
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 
 # Create your views here.
 
 class CareerViewSet(viewsets.ModelViewSet):
     queryset = Career.objects.all()
     serializer_class = CareerSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['career_name', 'description']
