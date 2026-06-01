@@ -1,9 +1,11 @@
 <script setup>
 import Home from "./components/Home.vue";
+import Careers from "./components/Careers.vue";
 </script>
 
 <template>
   <Home />
+  <Careers />
 </template>
 <!-- <style scoped>
 header {
